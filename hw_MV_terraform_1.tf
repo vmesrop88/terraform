@@ -3,13 +3,6 @@ provider "aws" {
   region = "us-east-2"
 }
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "mesropv2024"
-  acl = "private"
-
-}
-
-
 resource "aws_dynamodb_table" "terraform_lock" {
   name           = "TfTable"
   hash_key       = "LockID"
